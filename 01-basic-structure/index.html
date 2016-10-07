@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>d3</title>
+	<script src="https://d3js.org/d3.v4.js"></script>
+
+	<style type="text/css">
+		div.bar {
+    display: inline-block;
+    width: 20px;
+    height: 75px;   /* We'll override height later */
+    background-color: teal;
+}
+	</style>
+</head>
+<body>
+
+<div class="bar"></div>
+
+
+
+
+<script type="text/javascript">
+
+var dataset = [ 5, 10, 15, 20, 25 ];
+
+	d3.select("body").selectAll("p")
+    .data(dataset)
+    .enter()
+    .append("p")
+    .text(function(d) { return d; })
+    .style("color", "red");;
+</script>
+</body>
+</html>
