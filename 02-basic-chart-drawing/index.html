@@ -11,12 +11,13 @@
     width: 20px;
     height: 75px;   /* We'll override height later */
     background-color: teal;
+    margin-right: 5px;
 }
 	</style>
 </head>
 <body>
 
-<div class="bar"></div>
+
 
 
 
@@ -25,12 +26,15 @@
 
 var dataset = [ 5, 10, 15, 20, 25 ];
 
-	d3.select("body").selectAll("p")
+d3.select("body").selectAll("div")
     .data(dataset)
     .enter()
-    .append("p")
-    .text(function(d) { return d; })
-    .style("color", "red");;
+    .append("div")
+    .attr("class", "bar")
+    .style("height", function(d) {
+            return d*5 + "px";
+        });
+
 </script>
 </body>
 </html>
